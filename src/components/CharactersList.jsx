@@ -4,22 +4,24 @@ import { useEffect, useState } from 'react';
 
 const NavPage = ({ page, setPage }) => {
   return (
-    <div className="row p-3 w-20">
-      <div className="col-md-4">
-        {page == 1 ? (
-          ''
-        ) : (
-          <button className="btn btn-primary btn-sm" onClick={() => setPage(page - 1)}>
-            {page - 1}
+    <div className="text-center w-100">
+      <div className="row p-3">
+        <div className="col-4">
+          {page == 1 ? (
+            ''
+          ) : (
+            <button className="btn btn-primary btn-sm" onClick={() => setPage(page - 1)}>
+              {page - 1}
+            </button>
+          )}
+        </div>
+        <div className="col-4">{page}</div>
+        <div className="col-4">
+          <button className="btn btn-primary btn-sm" onClick={() => setPage(page + 1)}>
+            {page + 1}
           </button>
-        )}
+        </div>{' '}
       </div>
-      <div className="col-md-4">{page}</div>
-      <div className="col-md-4">
-        <button className="btn btn-primary btn-sm" onClick={() => setPage(page + 1)}>
-          {page + 1}
-        </button>
-      </div>{' '}
     </div>
   );
 };
